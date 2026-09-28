@@ -1,0 +1,2 @@
+import type {MetadataRoute} from 'next';import {busan,shipping,conditions} from '@/data';
+export default function sitemap():MetadataRoute.Sitemap{const base=process.env.NEXT_PUBLIC_SITE_URL;if(!base)return [];return ['','/busan','/regions',...busan.map(a=>`/busan/${a.slug}`),...shipping.map(a=>`/regions/${a.slug}`),...conditions.map(c=>`/condition/${c.slug}`)].map(path=>({url:`${base.replace(/\/$/,'')}${path}`,changeFrequency:'monthly' as const,priority:path===''?1:.7}))}
