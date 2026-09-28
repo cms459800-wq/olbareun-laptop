@@ -1,3 +1,4 @@
+import ShippingAddress from '@/components/shipping-address';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import type {Metadata} from 'next';
@@ -21,6 +22,7 @@ export default async function LocalRegion({params}:Params){
   return <main className="shell inner-page">
     <div className="breadcrumbs"><Link href="/">홈</Link> / <Link href="/regions">전국 택배매입</Link> / <Link href={`/regions/${slug}`}>{parent.name}</Link> / {area.name}</div>
     <div className="inner-hero violet"><span className="kicker">{parent.name.toUpperCase()} · DELIVERY</span><h1>{area.name} 고장난 노트북<br/><em>택배매입 안내</em></h1><p>{area.intro}</p><div className="info-chip">▣ {area.name} 지역은 택배 접수 · 발송 전 전화 상담</div></div>
+    <ShippingAddress/>
     <div className="detail-grid"><section className="detail-card"><span className="kicker">LOCAL CHECK</span><h2>{area.topic}</h2><p>{area.practical}</p><p>방문매입은 부산 지역을 대상으로 안내하며, {area.name}에서는 사진과 상태를 먼저 확인한 뒤 택배 접수 조건을 안내합니다.</p></section><section className="detail-card"><span className="kicker">PREPARE</span><h2>{area.checkTitle}</h2><ol>{area.checks.map(check=><li key={check}>{check}</li>)}</ol></section></div>
     <section className="content-panel"><span className="kicker">FREQUENT QUESTION</span><h2>{area.question}</h2><p>{area.answer}</p></section>
     <section className="content-panel local-process"><span className="kicker">DELIVERY PROCESS</span><h2>{area.name} 택배매입 진행 순서</h2><div className="local-steps"><div><b>01</b><strong>모델·상태 전달</strong><span>사진과 현재 증상을 정리</span></div><div><b>02</b><strong>접수 조건 상담</strong><span>발송 전 방식과 조건 확인</span></div><div><b>03</b><strong>안전 포장·발송</strong><span>화면과 모서리를 완충재로 보호</span></div><div><b>04</b><strong>실물 점검</strong><span>최종 매입 여부와 금액 안내</span></div></div></section>
