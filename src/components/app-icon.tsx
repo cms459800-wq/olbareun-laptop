@@ -1,8 +1,9 @@
-type Name='location'|'package'|'power'|'screen'|'water'|'battery'|'keyboard'|'laptop'|'list'|'search'|'check'|'shield';
+type Name='location'|'package'|'power'|'phone'|'screen'|'water'|'battery'|'keyboard'|'laptop'|'list'|'search'|'check'|'shield';
 const paths:Record<Name,React.ReactNode>={
   location:<><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></>,
   package:<><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="M3 7v10l9 5 9-5V7M12 12v10M7.5 4.5l9 5"/></>,
   power:<><path d="M12 2v10"/><path d="M6.2 5.8a9 9 0 1 0 11.6 0"/></>,
+  phone:<><path d="M21 16.5v3a2 2 0 0 1-2.2 2A18 18 0 0 1 2.5 5.2 2 2 0 0 1 4.5 3h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8l-1.6 1.6a14 14 0 0 0 6.1 6.1l1.6-1.6a2 2 0 0 1 1.8-.6l3 .5a2 2 0 0 1 1.7 2Z"/></>,
   screen:<><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8M12 18v4M7 8l3 3m0-3-3 3"/></>,
   water:<><path d="M12 2c-3 4-7 9-7 13a7 7 0 0 0 14 0c0-4-4-9-7-13Z"/><path d="M9 16a3 3 0 0 0 3 3"/></>,
   battery:<><rect x="2" y="6" width="18" height="12" rx="2"/><path d="M22 10v4M8 12h6M11 9v6"/></>,
