@@ -3,16 +3,17 @@ import Link from 'next/link';
 type KeywordGalleryProps={
   pageKey:string;
   title:string;
+  description?:string;
   keywords:[string,string,string,string];
   hrefs:[string,string,string,string];
   tags?:string[];
 };
 
-export default function KeywordGallery({pageKey,title,keywords,hrefs,tags=[]}:KeywordGalleryProps){
+export default function KeywordGallery({pageKey,title,description='궁금한 주제를 골라 상담 전에 확인해 보세요.',keywords,hrefs,tags=[]}:KeywordGalleryProps){
   const seed=[...pageKey].reduce((value,char)=>value*31+char.charCodeAt(0),0)>>>0;
   const order=[0,1,2,3].map((_,index)=>(index+seed%4)%4);
   return <section className="keyword-gallery" aria-label={title}>
-    <div className="section-head"><span className="kicker">LAPTOP GUIDE</span><h2>{title}</h2><p>궁금한 주제를 골라 상담 전에 확인해 보세요.</p></div>
+    <div className="section-head"><span className="kicker">LAPTOP GUIDE</span><h2>{title}</h2><p>{description}</p></div>
     <div className="keyword-grid">
       {keywords.map((keyword,index)=><Link href={hrefs[index]} className={`keyword-card keyword-art-${order[index]}`} key={keyword} aria-label={`${keyword} 안내 보기`}>
         <div className="keyword-picture" role="img" aria-label={`${keyword} 노트북 안내 이미지`}>
