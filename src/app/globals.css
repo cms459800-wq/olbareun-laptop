@@ -40,3 +40,4 @@
   .mobile-nav a{font-size:11px;min-height:44px}
 }
 .model-help{justify-self:start;color:var(--blue);font-size:12px;font-weight:800;margin-top:-9px;padding:5px 0}.model-help:hover{text-decoration:underline}
+.busan-topic{margin:36px 0}.busan-topic .detail-card ul{padding-left:20px;color:var(--muted);font-size:13px;line-height:1.8}.busan-topic .detail-card li+li{margin-top:6px}
