@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import type {Metadata} from 'next';
-export const metadata:Metadata={alternates:{canonical:'/'}};
+export const metadata:Metadata={
+  title:'고장난 노트북·폐 노트북 매입',
+  description:'전원 불량, 액정 파손, 침수 등 고장난 노트북과 폐 노트북의 매입 가능 여부를 상담합니다. 부산은 현장매입, 전국은 택배매입으로 안내합니다.',
+  alternates:{canonical:'/'},
+};
 import {busan,shipping,conditions} from '@/data';
 import QuickCheck from '@/components/quick-check';
 import AppIcon from '@/components/app-icon';
