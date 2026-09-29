@@ -1,6 +1,7 @@
 'use client';
 
 import {useState} from 'react';
+import Link from 'next/link';
 import {contactPhone,contactTel,contactSms} from '@/contact';
 
 const makers=['삼성','LG','Apple','Lenovo','HP','Dell','ASUS','MSI','기타/모름'];
@@ -29,6 +30,7 @@ export default function QuickCheck(){
     <form onSubmit={createSummary} onChange={()=>{setSummary('');setCopied(false)}}>
       <div className="field-pair"><label>거주 지역<select value={area} onChange={e=>setArea(e.target.value)} required><option value="">선택해 주세요</option><option value="부산">부산 · 현장매입</option><option value="전국">부산 외 · 택배매입</option></select></label><label>제조사<select value={maker} onChange={e=>setMaker(e.target.value)} required><option value="">선택해 주세요</option>{makers.map(v=><option key={v}>{v}</option>)}</select></label></div>
       <label>모델명 <span>모르면 비워 두세요</span><input value={model} onChange={e=>setModel(e.target.value)} placeholder="예: LG gram 16Z90R" maxLength={80}/></label>
+      <Link className="model-help" href="/guide/model">모델명 확인 방법 보기 ↗</Link>
       <label>제품 상태<select value={symptom} onChange={e=>setSymptom(e.target.value)} required><option value="">선택해 주세요</option>{symptoms.map(v=><option key={v}>{v}</option>)}</select></label>
       <label>충전기 유무 <span>선택 사항</span><select value={charger} onChange={e=>setCharger(e.target.value)}><option value="">모르겠어요</option><option value="있음">있음</option><option value="없음">없음</option></select></label>
       <button className="check-submit" type="submit">상담 정보 만들기 <span>↗</span></button>

@@ -39,3 +39,4 @@
   .ship-pills a{min-height:44px;display:inline-flex;align-items:center;font-size:13px}
   .mobile-nav a{font-size:11px;min-height:44px}
 }
+.model-help{justify-self:start;color:var(--blue);font-size:12px;font-weight:800;margin-top:-9px;padding:5px 0}.model-help:hover{text-decoration:underline}
