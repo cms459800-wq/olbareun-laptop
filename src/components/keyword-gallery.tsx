@@ -5,11 +5,6 @@ type KeywordGalleryProps={
   tags?:string[];
 };
 
-// Stable variation keeps the server-rendered layout consistent across visits.
-export function gallerySlot(pageKey:string){
-  return [...pageKey].reduce((value,char)=>value+char.charCodeAt(0),0)%3;
-}
-
 export default function KeywordGallery({pageKey,title,keywords,tags=[]}:KeywordGalleryProps){
   const seed=[...pageKey].reduce((value,char)=>value*31+char.charCodeAt(0),0)>>>0;
   const order=[0,1,2,3].map((_,index)=>(index+seed%4)%4);
