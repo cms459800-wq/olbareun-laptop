@@ -28,5 +28,5 @@ export default function Home(){return <main>
   <section className="shell guide-promo"><div><span className="kicker">BUYING GUIDE</span><h2>판매 전 궁금한 점을 확인하세요</h2><p>가격 판단 기준, 개인정보 정리, 택배 포장 방법을 정리했습니다.</p></div><Link className="button light" href="/guide">매입 가이드 보기 ↗</Link></section>
   <ContactPanel/>
   <section className="shell final-banner"><div><span>OLBAREUN BUY</span><h2>서랍 속 노트북,<br/>지금 상태부터 확인해 보세요.</h2><p>정상 제품부터 고장난 노트북까지, 지역별 안내를 확인하세요.</p></div><div className="banner-buttons"><Link href="/busan">부산 현장매입 ↗</Link><Link href="/regions">전국 택배매입 ↗</Link></div></section>
-  <div className="shell home-keywords"><KeywordGallery pageKey="home" title="노트북 매입 전 확인할 4가지" keywords={["고장난 노트북 매입","폐 노트북 상태 확인","부산 노트북 현장매입","전국 노트북 택배매입"]} tags={["모델 확인","고장 상태","매입 상담"]}/></div>
+  <div className="shell home-keywords"><KeywordGallery pageKey="home" title="노트북 매입 전 확인할 4가지" keywords={["고장난 노트북 매입","폐 노트북 상태 확인","부산 노트북 현장매입","전국 노트북 택배매입"]} hrefs={["/#conditions","/condition/scrap-laptop","/busan","/regions"]} tags={["모델 확인","고장 상태","매입 상담"]}/></div>
  </main>}

@@ -1,17 +1,20 @@
+import Link from 'next/link';
+
 type KeywordGalleryProps={
   pageKey:string;
   title:string;
   keywords:[string,string,string,string];
+  hrefs:[string,string,string,string];
   tags?:string[];
 };
 
-export default function KeywordGallery({pageKey,title,keywords,tags=[]}:KeywordGalleryProps){
+export default function KeywordGallery({pageKey,title,keywords,hrefs,tags=[]}:KeywordGalleryProps){
   const seed=[...pageKey].reduce((value,char)=>value*31+char.charCodeAt(0),0)>>>0;
   const order=[0,1,2,3].map((_,index)=>(index+seed%4)%4);
   return <section className="keyword-gallery" aria-label={title}>
     <div className="section-head"><span className="kicker">LAPTOP GUIDE</span><h2>{title}</h2><p>궁금한 주제를 골라 상담 전에 확인해 보세요.</p></div>
     <div className="keyword-grid">
-      {keywords.map((keyword,index)=><article className={`keyword-card keyword-art-${order[index]}`} key={keyword}>
+      {keywords.map((keyword,index)=><Link href={hrefs[index]} className={`keyword-card keyword-art-${order[index]}`} key={keyword} aria-label={`${keyword} 안내 보기`}>
         <div className="keyword-picture" role="img" aria-label={`${keyword} 노트북 안내 이미지`}>
           <svg viewBox="0 0 320 230" aria-hidden="true" focusable="false">
             <circle cx="270" cy="52" r="75" fill="currentColor" opacity=".12"/>
@@ -28,8 +31,8 @@ export default function KeywordGallery({pageKey,title,keywords,tags=[]}:KeywordG
           </svg>
           <strong>{keyword}</strong>
         </div>
-        <div className="keyword-caption"><b>{keyword}</b><div>{(tags.length?tags:[title,'모델 확인','상태 확인']).slice(0,3).map(tag=><span key={tag}>#{tag}</span>)}</div></div>
-      </article>)}
+        <div className="keyword-caption"><b>{keyword} <span className="keyword-arrow" aria-hidden="true">↗</span></b><div>{(tags.length?tags:[title,'모델 확인','상태 확인']).slice(0,3).map(tag=><span key={tag}>#{tag}</span>)}</div></div>
+      </Link>)}
     </div>
   </section>;
 }
