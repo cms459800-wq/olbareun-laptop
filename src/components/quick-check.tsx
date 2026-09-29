@@ -1,7 +1,7 @@
 'use client';
 
 import {useState} from 'react';
-import {contactPhone,contactTel} from '@/contact';
+import {contactPhone,contactTel,contactSms} from '@/contact';
 
 const makers=['삼성','LG','Apple','Lenovo','HP','Dell','ASUS','MSI','기타/모름'];
 const symptoms=['정상 작동','전원 불량','액정 파손','침수','배터리 불량','키보드 불량','기타/모름'];
@@ -33,6 +33,6 @@ export default function QuickCheck(){
       <label>충전기 유무 <span>선택 사항</span><select value={charger} onChange={e=>setCharger(e.target.value)}><option value="">모르겠어요</option><option value="있음">있음</option><option value="없음">없음</option></select></label>
       <button className="check-submit" type="submit">상담 정보 만들기 <span>↗</span></button>
     </form>
-    {summary&&<div className="summary-box" role="status"><strong>상담할 때 아래 내용을 전달하세요</strong><pre>{summary}</pre><div className="summary-actions"><button type="button" onClick={copy}>{copied?'복사했어요 ✓':'내용 복사하기'}</button><a href={contactTel}>전화 상담 {contactPhone} ↗</a></div><small>이 입력 내용은 서버로 전송하거나 저장하지 않습니다. 매입가를 자동 산정하는 기능은 아닙니다.</small></div>}
+    {summary&&<div className="summary-box" role="status"><strong>상담할 때 아래 내용을 전달하세요</strong><pre>{summary}</pre><div className="summary-actions"><a href={`${contactSms}?body=${encodeURIComponent(summary)}`}>문자로 상담 내용 보내기 ↗</a><button type="button" onClick={copy}>{copied?'복사했어요 ✓':'내용 복사하기'}</button><a className="summary-phone" href={contactTel}>전화 상담 {contactPhone} ↗</a></div><small>문자 버튼을 누르면 문자 앱에 내용이 채워집니다. 사진은 문자 앱에서 첨부하고 전송해 주세요. 입력 내용은 이 사이트의 서버로 전송하거나 저장하지 않습니다. 매입가를 자동 산정하는 기능은 아닙니다.</small></div>}
   </div>;
 }
