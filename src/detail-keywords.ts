@@ -12,6 +12,13 @@ export const brandKeywords:Record<string,string>={
   samsung:'갤럭시 북 세부 모델 확인',
   lg:'LG 그램 연식과 배터리 상태',
   macbook:'맥북 칩과 활성화 잠금 확인',
+  lenovo:'ThinkPad·IdeaPad 세부 모델 확인',
+  hp:'HP 모델 코드와 충전 상태',
+  dell:'Dell 기기 사양과 관리 계정',
+  asus:'ASUS 그래픽 사양과 전원 상태',
+  acer:'Acer 모델명과 힌지 상태',
+  msi:'MSI 그래픽 사양과 충전기',
+  surface:'Surface 화면·터치와 계정 연결',
 };
 
 export function detailGallerySlot(key:string){
