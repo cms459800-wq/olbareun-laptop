@@ -1,3 +1,5 @@
+import KeywordGallery from '@/components/keyword-gallery';
+import {brandKeywords,detailGallerySlot} from '@/detail-keywords';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import type {Metadata} from 'next';
@@ -20,15 +22,17 @@ export default async function BrandPage({params}:{params:Promise<{slug:string}>}
   const {slug}=await params;
   const brand=brands.find(item=>item.slug===slug);
   if(!brand)notFound();
+  const slot=detailGallerySlot(`brand-${slug}`);
+  const gallery=<KeywordGallery pageKey={`brand-${slug}`} title={`${brand.name} 매입 준비 주제`} description="모델, 기기 상태, 계정을 차례로 확인해 주세요." keywords={[`${brand.name} 모델명 확인`,`${brand.name} 상태 점검`,`${brand.name} 계정 정리`,brandKeywords[slug]]} hrefs={['/guide/model',`/condition/${brand.related}`,'/guide/privacy','/#estimate']} tags={[brand.name,'모델 확인','상담 준비']}/>;
   return <main className="shell inner-page">
     <div className="breadcrumbs"><Link href="/">홈</Link> / 브랜드 / {brand.name}</div>
     <div className="inner-hero"><span className="kicker">LAPTOP BRAND</span><h1>{brand.name}<br/><em>매입 안내</em></h1><p>{brand.intro}</p></div>
-    <div className="brand-detail-grid">
+    {slot===0&&gallery}<div className="brand-detail-grid">
       <article className="detail-card"><span className="feature-icon">⌕</span><h2>모델명 확인</h2><p>{brand.model}</p></article>
       <article className="detail-card"><span className="feature-icon">▤</span><h2>기기 상태 확인</h2><p>{brand.condition}</p></article>
       <article className="detail-card"><span className="feature-icon">✓</span><h2>자료와 계정 준비</h2><p>{brand.account}</p></article>
     </div>
-    <div className="notice-box"><strong>매입 가능 여부와 금액</strong><p>정확한 매입 조건은 모델·사양·실물 상태를 확인한 뒤 안내합니다. 사진 상담만으로 최종 금액이 확정되지는 않습니다.</p></div>
-    <div className="inline-links"><Link href={`/condition/${brand.related}`}>{brand.relatedText} ↗</Link><Link href="/guide/privacy">개인정보 정리 방법 ↗</Link><Link href="/busan">부산 현장매입 ↗</Link><Link href="/regions">전국 택배매입 ↗</Link><a href={contactTel}>전화 상담 {contactPhone} ↗</a></div>
+    {slot===1&&gallery}<div className="notice-box"><strong>매입 가능 여부와 금액</strong><p>정확한 매입 조건은 모델·사양·실물 상태를 확인한 뒤 안내합니다. 사진 상담만으로 최종 금액이 확정되지는 않습니다.</p></div>
+    {slot===2&&gallery}<div className="inline-links"><Link href={`/condition/${brand.related}`}>{brand.relatedText} ↗</Link><Link href="/guide/privacy">개인정보 정리 방법 ↗</Link><Link href="/busan">부산 현장매입 ↗</Link><Link href="/regions">전국 택배매입 ↗</Link><a href={contactTel}>전화 상담 {contactPhone} ↗</a></div>
   </main>;
 }
