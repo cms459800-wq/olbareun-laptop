@@ -1,1 +1,1 @@
-export const siteUrl=(process.env.NEXT_PUBLIC_SITE_URL||'https://olbareun-laptop.vercel.app').replace(/\/$/,'');
+export const siteUrl=(process.env.NEXT_PUBLIC_SITE_URL||'https://macpro.kr').replace(/\/$/,'');
