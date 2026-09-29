@@ -12,7 +12,7 @@ import ContactPanel from '@/components/contact-panel';
 
 const conditionIcons={
   'no-power':'power','broken-screen':'screen','water-damage':'water',
-  battery:'battery',keyboard:'keyboard','old-laptop':'laptop'
+  battery:'battery',keyboard:'keyboard','old-laptop':'laptop','scrap-laptop':'laptop'
 } as const;
 
 export default function Home(){return <main>

@@ -4,7 +4,7 @@ import {useState} from 'react';
 import {contactPhone,contactTel,contactSms} from '@/contact';
 
 const makers=['삼성','LG','Apple','Lenovo','HP','Dell','ASUS','MSI','기타/모름'];
-const symptoms=['정상 작동','전원 불량','액정 파손','침수','배터리 불량','키보드 불량','기타/모름'];
+const symptoms=['정상 작동','전원 불량','액정 파손','침수','배터리 불량','키보드 불량','폐 노트북·부품 누락','기타/모름'];
 
 export default function QuickCheck(){
   const [maker,setMaker]=useState('');

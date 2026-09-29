@@ -41,4 +41,5 @@ export const conditions = [
   {icon:'🔋',title:'배터리 불량',text:'충전·사용 시간 문제',slug:'battery'},
   {icon:'⌨',title:'키보드 고장',text:'키 입력이 잘 안 돼요',slug:'keyboard'},
   {icon:'⌁',title:'오래된 노트북',text:'교체 후 보관 중인 기기',slug:'old-laptop'},
+  {icon:'♻',title:'폐 노트북',text:'작동 불가·부품 누락 기기',slug:'scrap-laptop'},
 ];
