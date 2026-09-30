@@ -1,3 +1,4 @@
+import {pageMetadata} from '@/seo';
 import KeywordGallery from '@/components/keyword-gallery';
 import {brandKeywords,detailGallerySlot} from '@/detail-keywords';
 import Link from 'next/link';
@@ -11,11 +12,11 @@ export function generateStaticParams(){return brands.map(brand=>({slug:brand.slu
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{
   const {slug}=await params;
   const brand=brands.find(item=>item.slug===slug);
-  return {
+  return pageMetadata({
     title:brand?`${brand.name} 매입 안내`:'브랜드 안내',
-    description:brand?`${brand.name}의 모델명과 상태 확인 방법, 부산 현장매입 및 전국 택배매입 상담 준비를 안내합니다.`:'',
+    description:brand?`${brand.name} 매입 준비. ${brand.model}`:'',
     alternates:{canonical:`/brand/${slug}`},
-  };
+  });
 }
 
 export default async function BrandPage({params}:{params:Promise<{slug:string}>}){

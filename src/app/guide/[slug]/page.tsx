@@ -1,3 +1,4 @@
+import {pageMetadata} from '@/seo';
 import KeywordGallery from '@/components/keyword-gallery';
 import {detailGallerySlot} from '@/detail-keywords';
 import ShippingAddress from '@/components/shipping-address';
@@ -9,7 +10,7 @@ const articles={
   model:{title:'노트북 모델명 확인 방법',lead:'정확한 모델명을 알면 같은 제품군 안에서도 사양과 연식을 구분하기 쉽습니다. 전원이 켜지지 않아도 확인할 수 있는 방법부터 안내합니다.',sections:[['전원이 켜지지 않을 때','노트북을 뒤집어 하판 라벨의 제조사와 모델명 또는 모델 코드를 촬영해 주세요. 라벨이 지워졌다면 앞뒤 외관, 로고, 포트와 충전기 규격이 보이는 사진을 준비하세요. 배터리가 부풀었거나 침수됐다면 확인하려고 전원을 켜지 마세요.'],['Windows 노트북이 켜질 때','설정의 시스템 정보에서 장치 모델과 CPU·설치된 메모리를 확인할 수 있습니다. 제품군 이름만 보인다면 하판의 모델 코드도 함께 확인해 주세요. 삼성 갤럭시 북과 LG 그램은 연식과 세부 사양에 따라 모델이 나뉩니다.'],['맥북이 켜질 때','화면 왼쪽 위 Apple 메뉴의 ‘이 Mac에 관하여’에서 모델, 칩과 메모리를 확인해 주세요. 켜지지 않으면 하판의 모델 식별 정보와 기기 전체 사진을 준비하세요.'],['모델명을 끝내 모르겠다면','상담 폼의 모델명 칸은 비워도 됩니다. 제조사, 전원 상태, 기기 사진, 충전기 유무를 먼저 알려주세요. 사진을 공개 게시할 경우 일련번호는 가리고, 상담에서 필요한 정보만 전달하세요.']]}
 } as const;
 export function generateStaticParams(){return Object.keys(articles).map(slug=>({slug}))}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const a=articles[slug as keyof typeof articles];return {alternates:{canonical:`/guide/${slug}`},title:a?.title||'매입 가이드',description:a?.lead||''}}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const a=articles[slug as keyof typeof articles];return pageMetadata({alternates:{canonical:`/guide/${slug}`},title:a?.title||'매입 가이드',description:a?.lead||''})}
 export default async function Article({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const a=articles[slug as keyof typeof articles];if(!a)notFound();
 const slot=detailGallerySlot(`guide-${slug}`);
 const gallery=<KeywordGallery pageKey={`guide-${slug}`} title={`${a.title} 핵심 주제`} description="각 항목을 선택해 아래 설명으로 이동할 수 있습니다." keywords={[a.sections[0][0],a.sections[1][0],a.sections[2][0],a.sections[3]?.[0]??'상담 전 준비']} hrefs={['#section-1','#section-2','#section-3',a.sections[3]?'#section-4':'/#estimate']} tags={['노트북 매입','사전 확인','상담 준비']}/>;

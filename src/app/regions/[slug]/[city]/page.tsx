@@ -1,3 +1,4 @@
+import {pageMetadata} from '@/seo';
 import KeywordGallery from '@/components/keyword-gallery';
 import {regionGallerySlot} from '@/region-keywords';
 import ShippingAddress from '@/components/shipping-address';
@@ -13,7 +14,8 @@ export function generateStaticParams(){return localAreas.map(a=>({slug:a.parent,
 export async function generateMetadata({params}:Params):Promise<Metadata>{
   const {slug,city}=await params;
   const a=localAreas.find(x=>x.parent===slug&&x.slug===city);
-  return {title:a?`${a.name} 고장난 노트북 택배매입 안내`:'지역 안내',description:a?`${a.name}에서 ${a.topic}을 준비하는 방법. 제품 상태를 확인하고 발송 전 상담 후 택배로 접수합니다.`:'',alternates:{canonical:`/regions/${slug}/${city}`}};
+  const parent=shipping.find(x=>x.slug===slug);
+  return pageMetadata({title:a?`${parent?.name} ${a.name} 노트북 택배매입 · ${a.topic}`:'지역 안내',description:a?`${parent?.name} ${a.name} 노트북 택배 접수. ${a.practical}`:'',alternates:{canonical:`/regions/${slug}/${city}`}});
 }
 export default async function LocalRegion({params}:Params){
   const {slug,city}=await params;
