@@ -124,3 +124,10 @@
 @media(max-width:480px){.shipping-contact-card{padding:20px;gap:12px}.shipping-card-body{grid-template-columns:1fr}.shipping-address{grid-row:2}.shipping-card-body>.text-link{grid-row:3}.shipping-kakao{justify-content:flex-start;padding:12px 14px}}
 
 .shipping-collect-notice{margin-top:24px;padding:16px 14px;border-radius:12px;background:#ffffffa6;color:#5940b0;font-size:16px;font-weight:800;line-height:1.6;word-break:keep-all}
+
+.busan-home-card{display:grid;grid-template-columns:55px minmax(0,1fr);align-content:start;gap:24px 16px}
+.busan-home-areas{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.busan-home-areas a{display:flex;align-items:center;justify-content:space-between;gap:5px;background:#fff;border:1px solid transparent;border-radius:11px;padding:14px 12px;font-size:13px;font-weight:800;white-space:nowrap;transition:border-color .2s}
+.busan-home-areas a span{color:var(--blue)}
+.busan-home-areas a:hover{border-color:var(--blue)}
+@media(max-width:680px){.busan-home-card{grid-template-columns:45px minmax(0,1fr);gap:20px 14px}.busan-home-areas a{padding:13px 10px;font-size:12px}}
