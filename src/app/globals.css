@@ -134,3 +134,5 @@
 
 .shipping-collect-notice{font-size:18px}
 .shipping-collect-notice strong{color:#d71920;font-size:1.25em;font-weight:900}
+
+.address-copy{margin-top:12px}.address-copy button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;padding:8px 12px;border:1px solid #d7cffa;border-radius:9px;background:white;color:#5940b0;font-size:12px;font-weight:800;cursor:pointer}.address-copy button:hover{background:#eee9ff}.address-copy button:focus-visible{outline:2px solid #5940b0;outline-offset:3px}.address-copy [role="status"]{display:block;font-size:11px;line-height:1.5;margin-top:5px;color:#5940b0}.address-copy [role="status"]:empty{display:none}
