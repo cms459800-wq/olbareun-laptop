@@ -1,9 +1,10 @@
+import {areaMeta} from '@/area-meta';
 import {pageMetadata} from '@/seo';
 import KeywordGallery from '@/components/keyword-gallery';
 import {busanKeywords,busanGallerySlot} from '@/busan-keywords';
 import Link from 'next/link';import {notFound} from 'next/navigation';import type {Metadata} from 'next';import {busan} from '@/data';import {busanTopics} from '@/busan-topics';import {contactPhone,contactTel} from '@/contact';
 export function generateStaticParams(){return busan.map(a=>({slug:a.slug}))}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const a=busan.find(x=>x.slug===slug);return pageMetadata({alternates:{canonical:`/busan/${slug}`},title:a?`부산 ${a.name} 고장난 노트북 현장매입`:'지역 안내',description:a?`부산 ${a.name} ${a.focus} 매입 상담. ${busanTopics[slug].intro}`:''})}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const a=busan.find(x=>x.slug===slug);return pageMetadata({alternates:{canonical:`/busan/${slug}`},title:areaMeta[`busan/${slug}`]?.title||'지역 안내',description:areaMeta[`busan/${slug}`]?.description||''})}
 export default async function BusanArea({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const a=busan.find(x=>x.slug===slug);if(!a)notFound();const topic=busanTopics[slug];const areaIndex=busan.findIndex(x=>x.slug===slug);const nearby=[1,2,3,4].map(offset=>busan[(areaIndex+offset)%busan.length]);
 const {fourth,related}=busanKeywords[slug];
 const slot=busanGallerySlot(slug);

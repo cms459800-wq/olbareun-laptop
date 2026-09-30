@@ -1,3 +1,4 @@
+import {areaMeta} from '@/area-meta';
 import {pageMetadata} from '@/seo';
 import KeywordGallery from '@/components/keyword-gallery';
 import {regionGallerySlot} from '@/region-keywords';
@@ -14,8 +15,7 @@ export function generateStaticParams(){return localAreas.map(a=>({slug:a.parent,
 export async function generateMetadata({params}:Params):Promise<Metadata>{
   const {slug,city}=await params;
   const a=localAreas.find(x=>x.parent===slug&&x.slug===city);
-  const parent=shipping.find(x=>x.slug===slug);
-  return pageMetadata({title:a?`${parent?.name} ${a.name} 노트북 택배매입 · ${a.topic}`:'지역 안내',description:a?`${parent?.name} ${a.name} 노트북 택배 접수. ${a.practical}`:'',alternates:{canonical:`/regions/${slug}/${city}`}});
+  return pageMetadata({title:areaMeta[`regions/${slug}/${city}`]?.title||'지역 안내',description:areaMeta[`regions/${slug}/${city}`]?.description||'',alternates:{canonical:`/regions/${slug}/${city}`}});
 }
 export default async function LocalRegion({params}:Params){
   const {slug,city}=await params;

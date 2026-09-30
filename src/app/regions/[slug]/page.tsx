@@ -1,3 +1,4 @@
+import {areaMeta} from '@/area-meta';
 import {pageMetadata} from '@/seo';
 import KeywordGallery from '@/components/keyword-gallery';
 import {regionKeywords,regionGallerySlot} from '@/region-keywords';
@@ -5,7 +6,7 @@ import ShippingAddress from '@/components/shipping-address';
 import {localFor} from '@/local-areas';
 import Link from 'next/link';import {notFound} from 'next/navigation';import type {Metadata} from 'next';import {shipping} from '@/data';import {regionTopics} from '@/region-topics';import {contactPhone,contactTel} from '@/contact';
 export function generateStaticParams(){return shipping.map(a=>({slug:a.slug}))}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const a=shipping.find(x=>x.slug===slug);return pageMetadata({alternates:{canonical:`/regions/${slug}`},title:a?`${a.name} 고장난 노트북 택배매입`:'지역 안내',description:a?`${a.name} 노트북 택배매입. ${regionTopics[slug].intro}`:''})}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const a=shipping.find(x=>x.slug===slug);return pageMetadata({alternates:{canonical:`/regions/${slug}`},title:areaMeta[`regions/${slug}`]?.title||'지역 안내',description:areaMeta[`regions/${slug}`]?.description||''})}
 export default async function Region({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const a=shipping.find(x=>x.slug===slug);if(!a)notFound();const children=localFor(slug);const topic=regionTopics[slug];
 const {fourth,related}=regionKeywords[slug];
 const slot=regionGallerySlot(slug);
