@@ -108,3 +108,17 @@
 .hero-contact strong{display:block;font-size:20px;letter-spacing:-.02em;color:#192849;white-space:nowrap}
 .hero-contact-phone:hover{border-color:#315cf6}
 @media(max-width:680px){.hero-contact{gap:8px}.hero-contact>a,.hero-contact>div{padding:10px 12px;gap:8px}.hero-contact strong{font-size:17px}.hero-contact-icon{width:34px;height:34px}.hero-photo .hero{min-height:740px}}
+
+.route-grid{grid-template-columns:.85fr 1.15fr}
+.shipping-contact-card{padding:26px 22px;gap:15px}
+.shipping-card-body{display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;flex:1;min-width:0}
+.shipping-card-intro p{margin-bottom:0}
+.shipping-address{background:#ffffff99;padding:13px;border-radius:12px;color:#51487a}
+.shipping-address>span{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:800;margin-bottom:8px}
+.shipping-address address{font-size:14px;line-height:1.65;font-style:normal;word-break:keep-all}
+.shipping-address small{display:block;font-size:11px;line-height:1.6;margin-top:8px;color:#71688a}
+.shipping-card-body>.text-link{align-self:center}
+.shipping-kakao{display:flex;align-items:center;justify-content:center;gap:6px;background:#fee500;color:#3c1e1e;border-radius:10px;padding:11px 9px;font-size:13px;font-weight:700;align-self:end}
+.shipping-kakao strong{font-size:15px}
+@media(max-width:1000px){.route-grid{grid-template-columns:1fr}.shipping-card-body{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.shipping-contact-card{padding:20px;gap:12px}.shipping-card-body{grid-template-columns:1fr}.shipping-address{grid-row:2}.shipping-card-body>.text-link{grid-row:3}.shipping-kakao{justify-content:flex-start;padding:12px 14px}}
