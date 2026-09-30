@@ -131,3 +131,6 @@
 .busan-home-areas a span{color:var(--blue)}
 .busan-home-areas a:hover{border-color:var(--blue)}
 @media(max-width:680px){.busan-home-card{grid-template-columns:45px minmax(0,1fr);gap:20px 14px}.busan-home-areas a{padding:13px 10px;font-size:12px}}
+
+.shipping-collect-notice{font-size:18px}
+.shipping-collect-notice strong{color:#d71920;font-size:1.25em;font-weight:900}
