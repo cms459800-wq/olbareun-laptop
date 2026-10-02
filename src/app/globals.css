@@ -153,3 +153,8 @@
 .hero-photo .hero-buyback-highlight{margin:0 0 22px;padding:16px 20px;border-left:4px solid #315cf6;border-radius:0 14px 14px 0;background:rgba(255,255,255,.87);color:#1c3054;word-break:keep-all;box-shadow:0 6px 22px #19365308}.hero-buyback-highlight>span{display:block;font-size:14px;font-weight:700;color:#52617c;margin-bottom:5px}.hero-buyback-highlight>strong{display:block;font-size:22px;font-weight:850;line-height:1.6;letter-spacing:-.045em}.hero-buyback-highlight em{font-style:normal;color:#315cf6}@media(max-width:680px){.hero-photo .hero-buyback-highlight{padding:13px 15px;margin-bottom:18px;border-left-width:3px}.hero-buyback-highlight>span{font-size:13px}.hero-buyback-highlight>strong{font-size:19px;line-height:1.65}}
 
 .hero-background-mobile{display:none}@media(max-width:680px){.hero-background-desktop{display:none}.hero-background-mobile{display:block;object-fit:cover;object-position:center center;opacity:.32}.hero-photo .hero{min-height:0;padding-top:38px;padding-bottom:40px}.hero-photo::after{background:linear-gradient(180deg,rgba(248,251,255,.76),rgba(248,251,255,.64) 55%,rgba(248,251,255,.8))}.hero-photo .hero-copy{position:relative}.hero-photo .hero-buyback-highlight{background:rgba(255,255,255,.8)}}
+
+/* Clickable Kakao contact badges: visible keyboard focus and touch feedback. */
+.hero-contact-kakao:hover{border-color:#e4bf00;background:#fffbea}
+.shipping-kakao:hover{background:#f4d900}
+.hero-contact-kakao:focus-visible,.shipping-kakao:focus-visible{outline:3px solid #315cf6;outline-offset:4px}
