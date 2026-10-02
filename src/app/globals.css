@@ -158,3 +158,15 @@
 .hero-contact-kakao:hover{border-color:#e4bf00;background:#fffbea}
 .shipping-kakao:hover{background:#f4d900}
 .hero-contact-kakao:focus-visible,.shipping-kakao:focus-visible{outline:3px solid #315cf6;outline-offset:4px}
+
+@media(max-width:680px){
+ body{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+ .mobile-nav{left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));height:auto;min-height:72px;padding:7px;gap:5px;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(88px,1.2fr);background:rgba(255,255,255,.96);border:1px solid #e2e8f2;border-radius:22px;box-shadow:0 8px 32px rgba(20,32,68,.15);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);z-index:30}
+ .mobile-nav .mobile-nav-item{min-width:0;min-height:56px;gap:5px;padding:6px 3px;border-radius:15px;color:#64718a;transition:background .18s,color .18s}
+ .mobile-nav .mobile-nav-icon{display:grid;place-items:center;width:24px;height:24px;line-height:1;color:inherit}
+ .mobile-nav .mobile-nav-label{font-size:12px;font-weight:700;line-height:1.2;color:inherit;white-space:nowrap;letter-spacing:-.02em}
+ .mobile-nav .mobile-nav-item:hover{background:#eff3ff;color:#315cf6}
+ .mobile-nav .mobile-nav-kakao{background:#fee500;color:#3c1e1e;box-shadow:0 3px 9px rgba(219,185,0,.17)}
+ .mobile-nav .mobile-nav-kakao:hover{background:#f3d900;color:#3c1e1e}
+ .mobile-nav .mobile-nav-item:focus-visible{outline:3px solid #315cf6;outline-offset:2px}
+}
