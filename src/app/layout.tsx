@@ -8,6 +8,7 @@ import {contactPhone,contactTel} from '@/contact';
 
 export const metadata: Metadata = {
   metadataBase:new URL(siteUrl),
+  verification:{other:{'naver-site-verification':'93d79a08427b46baa79c380f9899babcd752b022'}},
   title: {default:'올바른 매입 | 고장난 노트북 매입',template:'%s | 올바른 매입'},
   description:'고장난 노트북도 모델과 상태를 확인해 매입 상담합니다. 부산은 현장매입, 그 외 전국은 택배매입으로 안내합니다.',
   robots:{index:true,follow:true},
