@@ -34,6 +34,6 @@ export default async function BrandPage({params}:{params:Promise<{slug:string}>}
       <article className="detail-card"><span className="feature-icon">✓</span><h2>자료와 계정 준비</h2><p>{brand.account}</p></article>
     </div>
     {slot===1&&gallery}<div className="notice-box"><strong>매입 가능 여부와 금액</strong><p>정확한 매입 조건은 모델·사양·실물 상태를 확인한 뒤 안내합니다. 사진 상담만으로 최종 금액이 확정되지는 않습니다.</p></div>
-    {slot===2&&gallery}<div className="inline-links"><Link href={`/condition/${brand.related}`}>{brand.relatedText} ↗</Link><Link href="/guide/privacy">개인정보 정리 방법 ↗</Link><Link href="/busan">부산 현장매입 ↗</Link><Link href="/regions">전국 택배매입 ↗</Link><a href={contactTel}>전화 상담 {contactPhone} ↗</a></div>
+    {slot===2&&gallery}<div className="inline-links"><Link href={`/condition/${brand.related}`}>{brand.relatedText} ↗</Link><Link href="/guide/privacy">개인정보 정리 방법 ↗</Link><Link href="/busan">부산 현장매입 ↗</Link><Link href="/regions">방문 지역 안내 ↗</Link><a href={contactTel}>전화 상담 {contactPhone} ↗</a></div>
   </main>;
 }

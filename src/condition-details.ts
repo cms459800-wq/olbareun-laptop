@@ -18,7 +18,7 @@ export const conditionDetails:Record<string,{title:string;text:string;question:s
     "text": "본체에 액체가 들어간 시점, 액체 종류, 젖은 부위와 이후 사용 여부를 전달하세요. 외관이 말라도 내부 상태는 달라질 수 있으므로 현재 상태로 접수 가능 여부부터 상담합니다.",
     "question": "다시 켜서 작동을 확인해야 하나요?",
     "answer": "침수된 본체는 다시 켜거나 전원을 연결하지 마세요. 파워서플라이를 직접 분해하지 않고 외관 사진과 침수 이력을 먼저 보내주세요.",
-    "guide": "/guide/packing"
+    "guide": "/guide/visit"
   },
   "storage": {
     "title": "SSD·하드디스크 유무와 증상을 구분하세요",

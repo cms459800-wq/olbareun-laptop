@@ -1,7 +1,7 @@
 export const conditionKeywords:Record<string,{focus:string;related:string}>={
   'no-power':{focus:'전원 표시등과 팬 반응',related:'/guide/model'},
-  'boot-failure':{focus:'부팅 실패와 오류 화면 기록',related:'/guide/packing'},
-  'water-damage':{focus:'침수 후 전원 사용 주의',related:'/guide/packing'},
+  'boot-failure':{focus:'부팅 실패와 오류 화면 기록',related:'/guide/visit'},
+  'water-damage':{focus:'침수 후 전원 사용 주의',related:'/guide/visit'},
   storage:{focus:'SSD·하드디스크 인식 상태',related:'/guide/price'},
   graphics:{focus:'그래픽카드 모델과 화면 출력',related:'/guide/price'},
   'old-computer':{focus:'구형 기기 모델명 찾기',related:'/guide/model'},

@@ -18,7 +18,7 @@ export default function QuickCheck(){
 
   function createSummary(e:React.FormEvent<HTMLFormElement>){
     e.preventDefault();
-    const details=`[올바른 매입 컴퓨터 상담 정보]\n지역/방식: ${area==='부산'?'부산 현장매입':'전국 택배매입'}\n제조사: ${maker}\n모델명: ${model.trim()||'모름 (본체 측면·뒷면 라벨 사진 준비)'}\n제품 상태: ${symptom}\n전원 케이블: ${charger||'확인 필요'}\n추가 확인: 기기 사진, 자료 백업 여부`;
+    const details=`[올바른 매입 컴퓨터 상담 정보]\n지역/방식: ${area==='부산'?'부산 현장매입':'방문 지역 안내'}\n제조사: ${maker}\n모델명: ${model.trim()||'모름 (본체 측면·뒷면 라벨 사진 준비)'}\n제품 상태: ${symptom}\n전원 케이블: ${charger||'확인 필요'}\n추가 확인: 기기 사진, 자료 백업 여부`;
     setSummary(details);setCopied(false);
   }
   async function copy(){
@@ -28,7 +28,7 @@ export default function QuickCheck(){
   return <div className="quick-check">
     <div className="quick-heading"><span>▤</span><div><strong>내 컴퓨터 정보 정리하기</strong><small>몇 가지만 선택하면 상담용 내용을 만들 수 있어요.</small></div></div>
     <form onSubmit={createSummary} onChange={()=>{setSummary('');setCopied(false)}}>
-      <div className="field-pair"><label>거주 지역<select value={area} onChange={e=>setArea(e.target.value)} required><option value="">선택해 주세요</option><option value="부산">부산 · 현장매입</option><option value="전국">부산 외 · 택배매입</option></select></label><label>제조사<select value={maker} onChange={e=>setMaker(e.target.value)} required><option value="">선택해 주세요</option>{makers.map(v=><option key={v}>{v}</option>)}</select></label></div>
+      <div className="field-pair"><label>거주 지역<select value={area} onChange={e=>setArea(e.target.value)} required><option value="">선택해 주세요</option><option value="부산">부산 · 현장매입</option><option value="전국">부산 외 · 방문 상담</option></select></label><label>제조사<select value={maker} onChange={e=>setMaker(e.target.value)} required><option value="">선택해 주세요</option>{makers.map(v=><option key={v}>{v}</option>)}</select></label></div>
       <label>모델명 <span>모르면 비워 두세요</span><input value={model} onChange={e=>setModel(e.target.value)} placeholder="예: 삼성 본체 모델명 또는 CPU i5 / RAM 16GB" maxLength={80}/></label>
       <Link className="model-help" href="/guide/model">모델명 확인 방법 보기 ↗</Link>
       <label>제품 상태<select value={symptom} onChange={e=>setSymptom(e.target.value)} required><option value="">선택해 주세요</option>{symptoms.map(v=><option key={v}>{v}</option>)}</select></label>

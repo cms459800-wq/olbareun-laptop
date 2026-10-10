@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function VisitPolicy(){return <aside className="notice-box"><strong>방문 가능 지역을 먼저 확인하세요</strong><p>현재 부산 방문매입을 중심으로 운영합니다. 부산 외 지역의 방문은 확정된 서비스가 아니므로, 위치·본체 수량·사양을 알려주고 가능 여부를 별도로 상담해 주세요. 컴퓨터 택배 매입은 운영하지 않습니다.</p><div className="inline-links"><Link href="/busan">부산 방문매입 안내 ↗</Link><a href="https://open.kakao.com/o/ssjJI0Pi">카톡으로 위치·수량 문의 ↗</a></div></aside>}
