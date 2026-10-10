@@ -1,3 +1,4 @@
+import BoardSummary from '@/components/board-summary';
 import BuyingProcess from '@/components/buying-process';
 import {pageMetadata} from '@/seo';
 import Image from 'next/image';
@@ -27,6 +28,7 @@ export default function Home(){return <main>
 
   <section className="shell region-section"><div className="section-head split"><div><span className="kicker">FIND YOUR AREA</span><h2>내 지역 매입 방식 찾기</h2><p>지역을 선택하면 접수 방법과 준비할 정보를 확인할 수 있어요.</p></div><Link href="/regions" className="more-link">전국 지역 보기 ↗</Link></div><div className="region-preview"><div className="preview-heading"><span><AppIcon name="location" size={25}/></span><div><strong>부산 현장매입</strong><small>방문 가능 여부·일정은 상담 후 안내</small></div></div><div className="pill-grid">{busan.slice(0,8).map(a=><Link href={`/busan/${a.slug}`} key={a.slug}>{a.name}<span>↗</span></Link>)}</div><Link className="preview-all" href="/busan">부산 16개 구·군 모두 보기 →</Link></div><div className="ship-pills"><Link href="/regions">부산 외 지역 방문 가능 여부 안내 ↗</Link></div></section>
   <section className="process-section buying-process-home" id="process"><div className="shell"><div className="section-head split"><div><span className="kicker">HOW IT WORKS</span><h2>사진 상담부터 입금 안내까지</h2><p>컴퓨터 매입, 이 5단계로 준비하세요.</p></div><Link className="more-link" href="/guide/selling">매입방법 자세히 보기 ↗</Link></div><BuyingProcess/></div></section>
+  <BoardSummary/>
   <section className="shell guide-promo"><div><span className="kicker">BUYING GUIDE</span><h2>판매 전 궁금한 점을 확인하세요</h2><p>가격 판단 기준, 개인정보 정리, 방문 준비 방법을 정리했습니다.</p></div><Link className="button light" href="/guide">매입 가이드 보기 ↗</Link></section>
   <section className="shell shredding-notice"><span className="shredding-icon"><AppIcon name="shield" size={28}/></span><div><h2>매입 후 저장장치 파쇄 안내</h2><p>모든 컴퓨터는 매입 후 <strong>저장장치를 천공·파쇄</strong>하고, <strong>작업 사진을 전송해 드립니다.</strong></p></div></section>
   <ContactPanel/>

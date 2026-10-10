@@ -5,6 +5,8 @@ import {useEffect, useRef} from 'react';
 import {contactPhone, contactTel} from '@/contact';
 
 const links = [
+  {href:'/notices', title:'공지사항', detail:'운영 안내와 새로운 소식'},
+  {href:'/inquiries', title:'매입문의', detail:'비밀글 작성 · 접수번호로 답변 확인'},
   {href:'/#conditions', title:'매입 품목', detail:'고장난 컴퓨터 · 폐컴퓨터'},
   {href:'/guide/selling', title:'매입 방법', detail:'사진 상담부터 검수·입금까지'},
   {href:'/busan', title:'부산 현장매입', detail:'지역별 방문 상담 안내'},
