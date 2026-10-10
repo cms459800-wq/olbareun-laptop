@@ -27,7 +27,7 @@ export default async function BrandPage({params}:{params:Promise<{slug:string}>}
   const gallery=<KeywordGallery pageKey={`brand-${slug}`} title={`${brand.name} 매입 준비 주제`} description="모델, 기기 상태, 계정을 차례로 확인해 주세요." keywords={[`${brand.name} 모델명 확인`,`${brand.name} 상태 점검`,`${brand.name} 계정 정리`,brandKeywords[slug]]} hrefs={['/guide/model',`/condition/${brand.related}`,'/guide/privacy','/guide/selling#step-model']} tags={[brand.name,'모델 확인','상담 준비']}/>;
   return <main className="shell inner-page">
     <div className="breadcrumbs"><Link href="/">홈</Link> / 브랜드 / {brand.name}</div>
-    <div className="inner-hero"><span className="kicker">LAPTOP BRAND</span><h1>{brand.name}<br/><em>매입 안내</em></h1><p>{brand.intro}</p></div>
+    <div className="inner-hero"><span className="kicker">COMPUTER BRAND</span><h1>{brand.name}<br/><em>매입 안내</em></h1><p>{brand.intro}</p></div>
     {slot===0&&gallery}<div className="brand-detail-grid">
       <article className="detail-card"><span className="feature-icon">⌕</span><h2>모델명 확인</h2><p>{brand.model}</p></article>
       <article className="detail-card"><span className="feature-icon">▤</span><h2>기기 상태 확인</h2><p>{brand.condition}</p></article>

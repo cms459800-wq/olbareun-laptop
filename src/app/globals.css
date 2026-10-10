@@ -202,3 +202,5 @@
  html{scroll-padding-top:80px}
 }
 @media(prefers-reduced-motion:reduce){.hamburger-lines i{transition:none}}
+
+.computer-step-art{background:linear-gradient(145deg,#eff4ff,#e3edf9);color:#315cf6;gap:18px}.computer-step-art>span{font-size:13px;line-height:1.6;color:#52617c}.hero-background-desktop{object-position:center right}@media(max-width:680px){.hero-background-mobile{object-position:65% center}.computer-step-art svg{width:44px;height:44px}.buying-flow-detail .computer-step-art svg{width:76px;height:76px}}

@@ -1,5 +1,8 @@
-type Name='location'|'package'|'power'|'phone'|'screen'|'water'|'battery'|'keyboard'|'laptop'|'list'|'search'|'check'|'shield';
+type Name='location'|'package'|'power'|'phone'|'screen'|'water'|'battery'|'keyboard'|'laptop'|'list'|'search'|'check'|'shield'|'computer'|'storage'|'graphics';
 const paths:Record<Name,React.ReactNode>={
+  computer:<><rect x="2" y="3" width="13" height="12" rx="2"/><path d="M8.5 15v4M5 19h7"/><rect x="18" y="3" width="4" height="18" rx="1"/><path d="M20 7h.01M20 17h.01"/></>,
+  storage:<><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="11" cy="11" r="4"/><path d="m11 11 5 5M6 17h.01"/></>,
+  graphics:<><rect x="2" y="5" width="18" height="13" rx="2"/><circle cx="8" cy="11.5" r="3"/><path d="M20 7h2v9M5 21h12M15 9v5"/></>,
   location:<><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></>,
   package:<><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="M3 7v10l9 5 9-5V7M12 12v10M7.5 4.5l9 5"/></>,
   power:<><path d="M12 2v10"/><path d="M6.2 5.8a9 9 0 1 0 11.6 0"/></>,
