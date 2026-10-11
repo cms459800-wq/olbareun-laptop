@@ -10,8 +10,8 @@ import {contactPhone,contactTel} from '@/contact';
 export const metadata: Metadata = {
   metadataBase:new URL(siteUrl),
   verification:{other:{'naver-site-verification':'93d79a08427b46baa79c380f9899babcd752b022'}},
-  title: {default:'올바른 매입 | 고장난 컴퓨터 매입',template:'%s | 올바른 매입'},
-  description:'고장난 컴퓨터도 모델과 상태를 확인해 매입 상담합니다. 부산 방문매입 중심으로 운영하며 부산 외 지역은 방문 가능 여부를 별도로 상담합니다.',
+  title: {default:'올바른 매입 | 컴퓨터·데스크탑 매입',template:'%s | 올바른 매입'},
+  description:'중고·고장 데스크탑 컴퓨터와 폐컴퓨터 본체의 모델·사양·상태를 확인해 매입 상담합니다. 부산 방문매입 중심으로 운영하며 부산 외 지역은 방문 가능 여부를 별도로 상담합니다.',
   robots:{index:true,follow:true},
   openGraph:{siteName:'올바른 매입',type:'website',locale:'ko_KR'},
 };
